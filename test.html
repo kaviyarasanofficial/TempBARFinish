@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Adding CSS Style Sheet To HTML Header Section  -->
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<!-- Adding JavaScript File In this Project Reference To JS File-->
+<script src="temp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.3/JsBarcode.all.min.js"></script>
+</head>
+
+<body>
+
+<!-- This Section Adding Tab Link Working Function Div Section Its Display TAB Button Names-->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Client')" id="defaultOpen">Client</button>
+  <button class="tablinks" onclick="openCity(event, 'Vendor')">Vendor</button>
+  <button class="tablinks" onclick="openCity(event, 'Candidate')">Candidate</button>
+</div>
+
+<!-- This Section Declaring Client TAB Section  -->
+<div id="Client" class="tabcontent">
+  <div class="container">
+    <div class="form-control">
+      <!-- This Section Client Form Details Form Section -->
+
+  <form id="form" class="form">
+    <label>Client Name <span >*</span> </label>
+    <input type="text" id="name" pattern="[a-z A-Z]*" title=" Name should only contain Letters" placeholder="E.g: Ponniyin Selvan" onfocus="this.placeholder=''" onblur="this.placeholder='E.g: Ponnin Selvan'" maxlength="20"  required >
+    <label>Phone Number <span >*</span></label>
+    <input type="tel" id="message" pattern="[0-9]{5}[0-9]{5}" title=" should only contain 10 numbers" placeholder="9689093456" onfocus="this.placeholder=''" onblur="this.placeholder='9689093456'" maxlength="10" required >
+    <label>Email ID <sup> optional </sup> </label>
+    <input type="email" id="email" placeholder="yourmail@mail.com  " title=" should only contain @mail.com" onfocus="this.placeholder=''" onblur="this.placeholder='yourmail@gmail.com'"  >
+    <label>No Of Clients</label>
+    <input type="number"   maxlength="2" pattern="[0-4]{1}" title=" Enter the number of people accompanying the client" placeholder="E.g: 2" onfocus="this.placeholder=''" onblur="this.placeholder='E.g: 2'" ><br>
+    <!-- Above Line Adding Break Statement Its Helping Into Button Spaces Purpose-->
+
+    <!-- This Button Once Entering Client Details Moving Function Button Section And QR Code Generate Function onclick Section Helping to Create QR CODE-->
+    <!-- This Button Acting Another Fuction Is BAR Code Generation Identify Element is Id="btn1" When Cleck This Button Generate BAR Code Using Form Phone number Values-->
+    <button type="submit" id="btn1" onclick="generateqr()" >Submit</button>
+    </form>
+</div>
+</div>
+</div>
+
+<!-- This Section Declaring Vendor TAB Section  -->
+<div id="Vendor" class="tabcontent">
+  <div class="container">
+    <div class="form-control">
+      
+<!-- This Section Vendor Form Details Form Section -->
+  <form id="form2" class="form">
+    <label>Vendor Name <span >*</span> </label>
+    <input type="text" pattern="[a-z A-Z]*" id="name" title=" Name should only contain Letters" placeholder="E.g: Ponniyin Selvan" onfocus="this.placeholder=''" onblur="this.placeholder='E.g: Ponnin Selvan'" maxlength="20"  required >
+    <label>Phone Number <span >*</span></label>
+    <input type="tel" id="message" pattern="[0-9]{5}[0-9]{5}" title=" should only contain 10 numbers" placeholder="9689093456" onfocus="this.placeholder=''" onblur="this.placeholder='9689093456'" maxlength="10" required >
+    <label>Email ID <sup style="color:rgb(108, 105, 105);font-weight:bold; font-size: 11px"> optional </sup></label>
+    <input type="email" id="email" placeholder="yourmail@mail.com " title=" should only contain @mail.com" onfocus="this.placeholder=''" onblur="this.placeholder='yourmail@gmail.com'" >
+    <label>Visiting Card Details <span >*</span></label>
+    <input type="text" id="subject" placeholder="Geetham Soft Pvt Lmt" title= "Enter vendor company details/ Aadhar No" onfocus="this.placeholder=''" onblur="this.placeholder='Geetham Soft Pvt Lmt'" required> <br>
+    <!-- Above Line Adding Break Statement Its Helping Into Button Spaces Purpose And QR Code Generate Function onclick Section Helping to Create QR CODE -->
+    
+    <!-- This Button Once Entering Client Details Moving Function Button Section-->
+     <!-- This Button Acting Another Fuction Is BAR Code Generation Identify Element is Id="btn2" When Cleck This Button Generate BAR Code Using Form Phone number Values-->
+    <button type="submit" id="btn2" onclick="generateqr()">Submit</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- This Section Declaring Vendor TAB Section  -->
+<div id="Candidate" class="tabcontent">
+  <div class="container">
+    <div class="form-control">
+
+  <!-- This Section Interview Candidate Form Details Form Section -->
+  <form id="form3" class="form">
+    <label class="label" >Candidate Name <span >*</span> </label>
+<input type="text" id="name"pattern="[a-z A-Z]*" title=" Name should only contain Letters" placeholder="E.g: Ponniyin Selvan" onfocus="this.placeholder=''" onblur="this.placeholder='E.g: Ponnin Selvan'"  maxlength="20"  required>
+<label class="label" >Phone Number <span >*</span></label>
+<input type="text"  id="phone" pattern="[0-9]{5}[0-9]{5}" title=" should only contain 10 numbers" placeholder="9689093456" onfocus="this.placeholder=''" onblur="this.placeholder='9689093456'" maxlength="10" required>
+<label class="label" >Email ID <sup style="color:rgb(108, 105, 105);font-weight:bold; font-size: 11px"> optional </sup></label>
+<input type="email"  id="email"placeholder="yourmail@mail.com " title=" should only contain @mail.com" onfocus="this.placeholder=''" onblur="this.placeholder='yourmail@gmail.com'">
+<label class="label" >ID Proof Number <span >*</span> </label>
+<input type="text"  id="proof"  pattern="[0-9]{4}[0-9]{4}[0-9]{4}" maxlength="12"  placeholder="Aadhar " title=" Enter Aadhar Number" onfocus="this.placeholder=''" onblur="this.placeholder='Aadhar/Voter ID'" required><br>
+<!-- Above Line Adding Break Statement Its Helping Into Button Spaces Purpose-->
+
+
+<!-- This Button Once Entering Client Details Moving Function Button Section And QR Code Generate Function onclick Section Helping to Create QR CODE-->
+<!-- This Button Acting Another Fuction Is BAR Code Generation Identify Element is Id="btn3" When Cleck This Button Generate BAR Code Using Form Phone number Values-->
+<button type="submit" id="btn3" onclick="generateq()">Submit</button>
+</form>
+</div>
+</div>
+</div>
+
+<!-- This Java Script Section Control The TAB Menu Activity and active TAB Fuction Java Script-->
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<!-- This HTML Code In a Camera Controls Section It Including Button Control-->
+
+<div id="containerphoto">
+  <video autoplay="true" id="video"></video>
+  <button id="btn"> Take Snap & Save </button>
+  <canvas id="canvas" class="hidden"></canvas>
+  <img src="" alt="" id="img">
+  <a id="dl-btn" href="#" download="image.jpeg" class="hidden"></a>
+</div>
+
+<div id="bar" class ="bar" >
+  <svg id="barcode"></svg>
+</div>
+
+<!-- This HTML Code In a QR Code CSS Reference Section It Including Place of Screen Control-->
+<div id="qrcode" class="qrcode"></div>
+
+<!-- This Java Script Section Control Camera Video Function and Download Image from snap the video Functions are Including -->
+<script>
+const video = document.querySelector('#video')
+const btn = document.querySelector('#btn')
+const canvas =  document.querySelector('#canvas')
+
+if(navigator.mediaDevices.getUserMedia){
+    navigator.mediaDevices.getUserMedia({video: true })
+    .then(stream => {
+        video.srcObject = stream
+    })
+    .catch(error => {
+        console.log('An error occured while accessing webcam.')
+    })
+}
+
+btn.addEventListener('click', () => {
+    // get intrinsic width and height of the video element
+    const width = video.videoWidth, height = video.videoHeight
+
+    const context = canvas.getContext('2d')
+
+    canvas.width = width
+    canvas.height = height
+
+    context.drawImage(video, 0, 0, width, height)
+
+    const imgURL = canvas.toDataURL('image/png')
+
+    document.querySelector('#dl-btn').href = imgURL
+
+    document.querySelector('#dl-btn').click()
+
+})
+</script>
+
+<!--This JavaScript Section Fuction Of Qr Code Generating Section Its When Click Submiting Fuction Collect form Data To Generate QR Code Data Details Bases 
+Its Only Available To Control Client And Vendor QR Code Generating and I Declaring Phone Number Section Class Name is Message Variable,
+Then ID Card Section Class Name Its Message Variable its Not a Make A Issue Generating QR Code Once final stage Generate Qr Code is Correctly -->
+<script>
+  function generateqr() {
+			var name = document.getElementById('name').value;
+			var email = document.getElementById('email').value;
+			var subject = document.getElementById('subject').value;
+			var message = document.getElementById('message').value;
+
+			console.log('Name: ' + name + " " + email + " " + subject + " " + message);
+
+			var url = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=Name:" +
+			name + "%0a Email: " + email + " Details: " + subject + " Phone: " + message;
+
+			var ifr = `<iframe src="${url}" height="200" width="200"></iframe>`;
+
+			document.getElementById('qrcode').innerHTML = ifr;
+		}
+</script>
+
+<!-- This JavaScript Its Helpfull to When Submiting Form Reloaded In Over Webpage Its Create a Issue while Capture Camera and QR Code 
+Section , So Avoid That Reloading Web Page Problem Its Adding ( PreventDefault method ) and Showing a Message to User Your Data is Stord Notification -->
+<script>
+document.getElementById("form").addEventListener("submit",function(e){
+      e.preventDefault()
+      alert("𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾! 𝓨𝓸𝓾𝓻 𝓻𝓮𝓼𝓹𝓸𝓷𝓼𝓮 𝓱𝓪𝓼 𝓫𝓮𝓮𝓷 𝓻𝓮𝓬𝓸𝓻𝓭𝓮𝓭.")  
+  })
+
+  document.getElementById("form2").addEventListener("submit",function(e){
+      e.preventDefault()
+      alert("𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾! 𝓨𝓸𝓾𝓻 𝓻𝓮𝓼𝓹𝓸𝓷𝓼𝓮 𝓱𝓪𝓼 𝓫𝓮𝓮𝓷 𝓻𝓮𝓬𝓸𝓻𝓭𝓮𝓭.")
+  })
+
+  document.getElementById("form3").addEventListener("submit",function(e){
+      e.preventDefault()
+      alert("𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾! 𝓨𝓸𝓾𝓻 𝓻𝓮𝓼𝓹𝓸𝓷𝓼𝓮 𝓱𝓪𝓼 𝓫𝓮𝓮𝓷 𝓻𝓮𝓬𝓸𝓻𝓭𝓮𝓭.")
+  })
+</script>
+
+
+<!-- This Java Script Helps To Generate BAR Code Using Form Data In Phone Number Getting ELEMENT ID is message Value from Phone Number
+When Click Submitting Button Its Calling Bar Code Function , Its Generate BAR Code In Phone Number Based Value
+and This Function Only Creating Client and Candidate Persons Only Not Generting Vendor-->
+
+<script>
+   document.getElementById("btn1").addEventListener("click", () => {
+   let text = document.getElementById("message").value;
+   JsBarcode("#barcode", text);
+});
+
+  document.getElementById("btn3").addEventListener("click", () => {
+  let text = document.getElementById("phone").value;
+  JsBarcode("#barcode", text);
+});
+</script>
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<script>
+    function saveAccount(){
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "abc123",
+  database: "PBSC_Parking_DB"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+console.log("connected");
+});
+
+var firstName = document.getElementById("firstName");
+var lastName = document.getElementById("lastName");
+var psw = document.getElementById("psw");
+var userName = document.getElementById("userName");
+var email = document.getElementById("inputText");
+
+
+
+var sql = "INSERT INTO accounts (UserName, FirstName, LastName, Email, UserPassword) VALUES ('"+userName+ "', '"+firstName+"','"+lastName+"','"+email+"','"+psw+"')";
+con.query(sql, function (err, result) {
+    if (err) {
+        throw err;
+
+    }
+
+    console.log(result.affectedRows + " record(s) updated");
+  });
+}
+</script>
+
+
+
+
+<!-- This Section Finish Up All Codes In HTML Its A Closing Total HTML Program and Java Script Program-->
+</body>
+</html> 

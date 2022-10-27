@@ -1,0 +1,166 @@
+
+
+* {box-sizing: border-box}
+body {
+  
+    background: linear-gradient(35deg, red, purple);
+  
+  font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid rgb(255, 3, 3);
+  background-color: #fefefe;
+  width: 10%;
+  height: px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  border-radius: 7px;
+  background-color: inherit;
+  color: rgb(19, 1, 1);
+  padding: 10px 20px;
+  width: 100%;
+  border: 8px solid #d91d3f;;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color:Cyan;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 12px 12px;
+  border: px solid rgb(223, 15, 15);
+  width: 40%;
+  border-left: none;
+  height: 560px;
+}
+.container {
+  padding: 29px;
+	background-color: rgb(255, 251, 251);
+	border-radius: 32px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 330px;
+	max-width: 100%;
+}
+.form {
+	padding: 4px 14px;	
+  
+}
+
+.form-control {
+	margin-bottom: 1px;
+	padding-bottom: 2px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block; 
+	margin-bottom: 11px;
+}
+
+.form-control input {
+	border: 2px solid #10ebb8;
+	border-radius: 11px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+  margin-bottom: 18px;
+	padding: 11px;
+	width: 100%;
+}
+.form button {
+	background-color: #9d25b0f0;
+	border: 2px solid #0b0606;
+	border-radius: 8px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 1px;
+
+  margin-bottom: 2px;
+	width: 100%;
+}
+#containerphoto {
+  
+    margin: 16px auto;
+    width: 300px;
+    height: 375px;
+	padding:18px 300px;
+}
+#video {
+    width: 363px;
+    height: 272px;
+    background-color: rgb(157, 9, 147);
+    border-radius: 32px;
+}
+
+.hidden{
+    display: none;
+}
+
+#btn{
+	background-color: #9d25b0f0;
+	color: #fff;
+    display: block;
+    margin: 30px auto;
+	top: 5px;
+	margin-left: 100px;
+	bottom: 30px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+	padding: 10px;
+	
+	
+}
+
+#btn:hover{
+    cursor: pointer;
+}
+
+form span{
+  color:red;
+  font-weight:bold;
+   font-size: 17px;
+}
+form sup{
+  
+  color:rgb(108, 105, 105);
+  font-weight:bold; 
+  font-size: 11px;
+}
+
+.qrcode {
+  margin: 10px auto;
+	margin-left: 1040px;
+	margin-top: -16%;
+  
+}
+
+.bar {
+  margin: 3px auto;
+	margin-left: 2px;
+  margin-bottom: -7px;
+	margin-top: -0.5%;
+  
+}
